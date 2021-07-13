@@ -4,12 +4,9 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "ionic:build:prod": "ionic-app-scripts build -- --prod",
+    "start": "node server.js",
+    "heroku-postbuild": "npm run ionic:build:prod"
   },
   "private": true,
   "dependencies": {
