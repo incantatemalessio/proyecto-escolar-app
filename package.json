@@ -4,20 +4,22 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "ionic:build:prod": "ionic-app-scripts build -- --prod",
-    "start": "node server.js",
-    "heroku-postbuild": "npm run ionic:build:prod"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
-    "@ionic/app-scripts": "^3.2.4",
-    "typescript": "~4.2.4",
     "@angular/common": "~12.0.1",
     "@angular/core": "~12.0.1",
     "@angular/forms": "~12.0.1",
     "@angular/platform-browser": "~12.0.1",
     "@angular/platform-browser-dynamic": "~12.0.1",
     "@angular/router": "~12.0.1",
+    "@capacitor/android": "3.1.1",
     "@capacitor/app": "1.0.2",
     "@capacitor/core": "3.1.1",
     "@capacitor/haptics": "1.0.2",
@@ -58,7 +60,8 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
-    "ts-node": "~8.3.0"
+    "ts-node": "~8.3.0",
+    "typescript": "~4.2.4"
   },
   "description": "An Ionic project"
 }

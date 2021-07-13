@@ -1,5 +1,5 @@
 {
-	"appId": "io.ionic.starter",
+	"appId": "com.solorioapps.proyectoescolar",
 	"appName": "proyecto-escolar-app",
 	"webDir": "www",
 	"bundledWebRuntime": false
