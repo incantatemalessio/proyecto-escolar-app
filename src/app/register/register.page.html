@@ -1,0 +1,58 @@
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <form [formGroup]="form" (ngSubmit)="signup()">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Registrarse</ion-card-title>
+          <ion-card-subtitle>Proyecto escolar</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="stacked">Correo / Usuario</ion-label>
+            <ion-input
+              placeholder="correo@ejemplo.com"
+              formControlName="email"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Nombre Completo</ion-label>
+            <ion-input
+              placeholder="Jose Arcadio Buendia"
+              formControlName="name"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Codigo de invitacion</ion-label>
+            <ion-input
+              placeholder="CODIGOINVITACION"
+              formControlName="invitacion"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Contraseña</ion-label>
+            <ion-input
+              type="password"
+              placeholder="pass123"
+              formControlName="password"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Repita Contraseña</ion-label>
+            <ion-input
+              type="password"
+              placeholder="pass123"
+              formControlName="repeatpassword"
+            ></ion-input>
+          </ion-item>
+
+          <ion-button expand="full" type="submit">Registrarse</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </form>
+  </div>
+
+</ion-content>

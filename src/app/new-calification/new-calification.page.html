@@ -1,0 +1,200 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title *ngIf="this.edit">Actualizar</ion-title>
+    <ion-title *ngIf="!this.edit">Nueva Calificacion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title *ngIf="this.edit" size="large">Actualizar</ion-title>
+      <ion-title *ngIf="!this.edit" size="large">Nueva Calificacion</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <form [formGroup]="form" (ngSubmit)="newCalification()" *ngIf="!this.edit">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle
+            >Registre la informacion del alumno</ion-card-subtitle
+          >
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="stacked">Nombre Completo</ion-label>
+            <ion-input
+              clearInput="true"
+              placeholder="Patricia Lopez Suarez"
+              formControlName="alumno"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Materia</ion-label>
+            <!-- <ion-input clearInput="true" placeholder="Ciencias Sociales" formControlName="materia"></ion-input> -->
+            <ion-select formControlName="materia">
+              <ion-select-option value="Participación Social "
+                >Participación Social
+              </ion-select-option>
+              <ion-select-option value="Moral">Moral</ion-select-option>
+              <ion-select-option value="Formación Humana"
+                >Formación Humana</ion-select-option
+              >
+              <ion-select-option value="Artes">Artes</ion-select-option>
+              <ion-select-option value="Habitos y conducta"
+                >Habitos y conducta</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Calificacion</ion-label>
+            <ion-input
+              type="decimal"
+              clearInput="true"
+              placeholder="9"
+              formControlName="nota"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Asistencias</ion-label>
+            <ion-input
+              type="numeric"
+              clearInput="true"
+              placeholder="27"
+              formControlName="asistencias"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Matricula</ion-label>
+            <ion-input
+              clearInput="true"
+              placeholder="20210720ABC"
+              formControlName="matricula"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Informacion Adicional:</ion-label>
+            <ion-textarea
+              type="text"
+              clearInput="true"
+              rows="6"
+              cols="20"
+              placeholder="Ingrese alguna anotacion adicional..."
+              formControlName="descripcion"
+            ></ion-textarea>
+          </ion-item>
+
+          <ion-button expand="full" type="submit"
+            >Registrar información</ion-button
+          >
+        </ion-card-content>
+      </ion-card>
+    </form>
+
+    <form
+      [formGroup]="form"
+      (ngSubmit)="updateCalification()"
+      *ngIf="this.edit"
+    >
+      <ion-card>
+        <ion-item>
+          <ion-label></ion-label>Seleccione esta opcion si desea eliminar la
+          calificacion
+          <ion-button
+            fill="outline"
+            slot="end"
+            color="danger"
+            (click)="deleteCalification()"
+            >Eliminar</ion-button
+          >
+        </ion-item>
+
+        <ion-card-header>
+          <ion-card-subtitle
+            >Actualize la informacion del alumno</ion-card-subtitle
+          >
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="stacked">Nombre Completo</ion-label>
+            <ion-input
+              clearInput="true"
+              placeholder="Patricia Lopez Suarez"
+              formControlName="alumno"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Materia</ion-label>
+            <!-- <ion-input clearInput="true" placeholder="Ciencias Sociales" formControlName="materia"></ion-input> -->
+            <ion-select formControlName="materia">
+              <ion-select-option value="Participación Social "
+                >Participación Social
+              </ion-select-option>
+              <ion-select-option value="Moral">Moral</ion-select-option>
+              <ion-select-option value="Formación Humana"
+                >Formación Humana</ion-select-option
+              >
+              <ion-select-option value="Artes">Artes</ion-select-option>
+              <ion-select-option value="Habitos y conducta"
+                >Habitos y conducta</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Calificacion</ion-label>
+            <ion-input
+              type="decimal"
+              clearInput="true"
+              placeholder="9"
+              formControlName="nota"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Asistencias</ion-label>
+            <ion-input
+              type="numeric"
+              clearInput="true"
+              placeholder="27"
+              formControlName="asistencias"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Matricula</ion-label>
+            <ion-input
+              clearInput="true"
+              placeholder="20210720ABC"
+              formControlName="matricula"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Informacion Adicional:</ion-label>
+            <ion-textarea
+              type="text"
+              clearInput="true"
+              rows="6"
+              cols="20"
+              placeholder="Ingrese alguna anotacion adicional..."
+              formControlName="descripcion"
+            ></ion-textarea>
+          </ion-item>
+
+          <ion-button expand="full" type="submit"
+            >Actualizar información</ion-button
+          >
+        </ion-card-content>
+      </ion-card>
+    </form>
+  </div>
+</ion-content>

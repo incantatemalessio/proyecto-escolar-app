@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "proyecto-escolar-app",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
